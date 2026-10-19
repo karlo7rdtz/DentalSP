@@ -1,0 +1,72 @@
+:root {
+  /* PALETA PRINCIPAL DE LA APLICACIÓN */
+
+  --stormy-teal: #006d77;
+  --pearl-aqua: #83c5be;
+  --alice-blue: #edf6f9;
+  --almond-silk: #ffddd2;
+  --tangerine-dream: #e29578;
+}
+/* =========================
+   PALETA 1
+   ========================= */
+
+.paleta-1 {
+  --perfil-principal: #606c38;
+  --perfil-oscuro: #283618;
+  --perfil-fondo: #fefae0;
+  --perfil-acento: #dda15e;
+  --perfil-acento-secundario: #bc6c25;
+}
+
+
+/* =========================
+   PALETA 2
+   ========================= */
+
+.paleta-2 {
+  --perfil-principal: #780000;
+  --perfil-oscuro: #003049;
+  --perfil-fondo:  #fdf0d5;
+  --perfil-acento:#669bbc;
+  --perfil-acento-secundario: #c1121f;
+}
+
+
+/* =========================
+   PALETA 3
+   ========================= */
+
+.paleta-3 {
+  --perfil-principal: #724319;
+  --perfil-oscuro: #feeac7;
+  --perfil-fondo: #cad182;
+  --perfil-acento: #866445;
+  --perfil-acento-secundario: #d88180;
+}
+
+
+/* =========================
+   PALETA 4
+   ========================= */
+
+.paleta-4 {
+  --perfil-principal: #579181;
+  --perfil-oscuro:#f7ede2;
+  --perfil-fondo: #f1cd92;
+  --perfil-acento: #f28482; 
+  --perfil-acento-secundario: #84a59d;
+}
+
+
+/* =========================
+   PALETA 5
+   ========================= */
+
+.paleta-5 {
+  --perfil-principal: #6e0d25;
+  --perfil-oscuro:  #f1d9b9;
+  --perfil-fondo:#ffffb3;
+  --perfil-acento:#6a381f;
+  --perfil-acento-secundario:  #9b7659f8;
+}

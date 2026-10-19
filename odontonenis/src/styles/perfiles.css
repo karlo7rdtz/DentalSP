@@ -1,0 +1,776 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap");
+
+@import "./colores.css";
+
+/* =========================
+   PANTALLA COMPLETA
+   ========================= */
+
+.pantalla-perfiles {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background-color: var(--alice-blue);
+
+  background-image:
+    linear-gradient(
+      rgba(237, 246, 249, 0.55),
+      rgba(237, 246, 249, 0.55)
+    ),
+    url("../assets/fondo.png");
+
+  background-repeat: repeat;
+
+  background-size: 350px auto;
+
+  background-position: center;
+}
+
+/* =========================
+   PANEL PRINCIPAL
+   ========================= */
+
+.panel-perfiles h1 {
+  margin: 0;
+
+  color: var(--alice-blue);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 36px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   TITULO
+   ========================= */
+
+.panel-perfiles {
+  width: 850px;
+  max-width: 95%;
+
+  padding: 50px 45px;
+
+  background-color: var(--stormy-teal) !important;
+
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.panel-perfiles h1 {
+  color: var(--alice-blue) !important;
+  font-size: 40px;
+}
+
+
+/* =========================
+   CONTENEDOR
+   ========================= */
+
+.contenedor-perfiles {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 35px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+.tarjeta-perfil {
+  width: 290px;
+
+  padding: 30px 25px;
+
+  border-radius: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  background-color:
+    var(--perfil-fondo);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.tarjeta-perfil:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 14px 28px
+    rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================
+   AVATAR TEMPORAL
+   ========================= */
+
+.avatar-temporal {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+
+  font-size: 58px;
+
+  border:
+    5px solid
+    var(--perfil-acento);
+}
+
+
+/* =========================
+   NOMBRE
+   ========================= */
+
+.tarjeta-perfil h2 {
+  margin: 5px 0;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 27px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.tarjeta-perfil button {
+  width: 170px;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.boton-ingresar {
+  border: none;
+
+  background-color:
+    var(--perfil-acento);
+
+  color:
+    var(--white);
+}
+
+
+.boton-ingresar:hover {
+  transform: scale(1.05);
+
+  background-color:
+    var(--perfil-acento-secundario);
+}
+
+
+.boton-editar {
+  background-color: transparent;
+
+  border:
+    2px solid
+    var(--perfil-principal);
+
+  color:
+    var(--perfil-principal);
+}
+
+
+.boton-editar:hover {
+  background-color:
+    var(--perfil-principal);
+
+  color:
+    var(--perfil-fondo);
+}
+
+/* =========================
+   FONDO DEL EDITOR
+   ========================= */
+
+.fondo-editor {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 30px 20px;
+
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+
+/* =========================
+   VENTANA EDITAR PERFIL
+   ========================= */
+
+.editor-perfil {
+  width: 430px;
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  padding: 35px;
+
+  border-radius: 28px;
+
+  background-color: var(--perfil-fondo);
+
+  opacity: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+
+  position: relative;
+
+  z-index: 1001;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.30);
+}
+
+/* TITULO */
+
+.editor-perfil h2 {
+  margin: 0;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+}
+
+
+/* ETIQUETAS */
+
+.editor-perfil label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 600;
+}
+
+
+/* INPUTS Y SELECT */
+
+.editor-perfil input,
+.editor-perfil select {
+  padding: 12px;
+
+  border: 1px solid var(--perfil-acento);
+
+  border-radius: 12px;
+
+  background-color: white;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+}
+
+
+/* VISTA PREVIA */
+
+.vista-previa-perfil {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background-color:
+    rgba(255, 255, 255, 0.55);
+}
+
+
+.vista-previa-perfil h3 {
+  margin: 0;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/* BOTONES */
+
+.botones-editor {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+
+.botones-editor button {
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 600;
+}
+
+
+.botones-editor button:first-child {
+  background-color: transparent;
+
+  border: 2px solid var(--perfil-principal);
+
+  color: var(--perfil-principal);
+}
+
+
+.botones-editor button:last-child {
+  border: none;
+
+  background-color: var(--perfil-acento);
+
+  color: var(--perfil-oscuro);
+}
+
+    /* =========================
+   AVATAR DEL PERFIL
+   ========================= */
+
+.avatar-temporal {
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: white;
+
+  border: 4px solid var(--perfil-acento);
+
+  overflow: hidden;
+}
+
+.avatar-temporal img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* =========================
+   SELECTOR DE AVATARES
+   ========================= */
+
+.selector-avatares {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.selector-avatares button {
+  width: 75px;
+  height: 75px;
+
+  padding: 6px;
+
+  border: 2px solid var(--perfil-acento);
+
+  border-radius: 50%;
+
+  background-color: white;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: 0.2s ease;
+}
+
+.selector-avatares button:hover {
+  transform: scale(1.08);
+
+  border-color: var(--perfil-principal);
+}
+
+.selector-avatares img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+/* =========================
+   PANTALLA LOGIN DEL PERFIL
+   ========================= */
+
+.pantalla-ingreso-perfil {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  background-image: url("../assets/fondo.png");
+  background-repeat: repeat;
+  background-size: 350px auto;
+}
+
+
+/* =========================
+   PANEL LOGIN
+   ========================= */
+
+.panel-ingreso-perfil {
+  width: 480px;
+  max-width: 95%;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  background-color: var(--perfil-fondo);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 22px;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.20);
+
+  position: relative;
+}
+
+
+.panel-ingreso-perfil h1 {
+  margin: 0;
+
+  color: var(--perfil-principal);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 35px;
+
+  letter-spacing: 3px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   AVATAR
+   ========================= */
+
+.avatar-login {
+  width: 135px;
+  height: 135px;
+
+  border-radius: 50%;
+
+  padding: 8px;
+
+  background-color: white;
+
+  border: 5px solid
+    var(--perfil-acento);
+
+  overflow: hidden;
+}
+
+
+.avatar-login img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   INPUT CONTRASEÑA
+   ========================= */
+
+.campo-login {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 600;
+}
+
+
+.campo-login input {
+  width: 100%;
+
+  padding: 14px;
+
+  border:
+    2px solid
+    var(--perfil-acento);
+
+  border-radius: 12px;
+
+  background-color: white;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+
+.campo-login input:focus {
+  border-color:
+    var(--perfil-principal);
+}
+
+
+/* =========================
+   BOTONES LOGIN
+   ========================= */
+
+.boton-iniciar-perfil,
+.boton-crear-contrasena {
+  min-width: 190px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background-color:
+    var(--perfil-acento);
+
+  color:
+    var(--perfil-oscuro);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.boton-cambiar-contrasena,
+.boton-cancelar-cambio {
+  border: none;
+
+  background-color: transparent;
+
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
+
+.boton-volver {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  border: none;
+
+  background-color: transparent;
+
+  color: var(--perfil-principal);
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.texto-ayuda {
+  color: var(--perfil-principal);
+
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+}
+
+
+.mensaje-login {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  color: var(--perfil-principal);
+
+  font-weight: 600;
+
+  text-align: center;
+}
+.vista-logo {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 15px;
+}
+
+.vista-logo img {
+  width: 140px;
+  height: 140px;
+
+  object-fit: contain;
+
+  background-color: white;
+
+  border-radius: 18px;
+
+  padding: 10px;
+
+  border: 2px solid var(--perfil-acento);
+}
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 700px) {
+
+  .pantalla-perfiles {
+    padding: 20px 15px;
+  }
+
+  .panel-perfiles {
+    padding: 35px 20px;
+  }
+
+  .panel-perfiles h1 {
+    font-size: 25px;
+
+    letter-spacing: 2px;
+  }
+
+  .contenedor-perfiles {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .tarjeta-perfil {
+    width: 100%;
+
+    max-width: 320px;
+  }
+}
