@@ -1,9 +1,16 @@
-import SeleccionarPerfil from "./pages/seleccionarPerfil";
+//import SeleccionarPerfil from "./pages/seleccionarPerfil";
+
+//function App() {
+ // return (
+   // <SeleccionarPerfil />
+ // );
+//}
+
+// export default App;
+import RegistroPaciente from "./pages/registroPacientes";
 
 function App() {
-  return (
-    <SeleccionarPerfil />
-  );
+  return <RegistroPaciente />;
 }
 
 export default App;
