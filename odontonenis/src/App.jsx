@@ -1,3 +1,6 @@
+
+//****PRIMERA INTERFAZ PERFILES****//
+
 //import SeleccionarPerfil from "./pages/seleccionarPerfil";
 
 //function App() {
@@ -7,10 +10,27 @@
 //}
 
 // export default App;
-import RegistroPaciente from "./pages/registroPacientes";
+
+//****SEGUNDA INTERFAZ CONSENTIMIENTO PACIENTE****//
+
+//import RegistroPaciente from "./pages/registroPacientes";
+
+//function App() {
+  //return <RegistroPaciente />;
+//}
+
+//export default App;
+
+//****TERCERA INTERFAZ CONSENTIMIENTO PACIENTE****//
+
+import ConsentimientoPaciente from "./components/consentimientopaciente";
 
 function App() {
-  return <RegistroPaciente />;
+  return (
+    <ConsentimientoPaciente
+      nombrePaciente="Paciente de prueba"
+    />
+  );
 }
 
 export default App;
