@@ -22,15 +22,19 @@
 //export default App;
 
 //****TERCERA INTERFAZ CONSENTIMIENTO PACIENTE****//
+//import RegistroPaciente from "./pages/registroPacientes";
 
-import ConsentimientoPaciente from "./components/consentimientopaciente";
+//function App() {
+  //return <RegistroPaciente />;
+//}
+
+//export default App;
+
+//****CUARTA INTERFAZ AGENDA****//
+import Agenda from "./pages/agenda";
 
 function App() {
-  return (
-    <ConsentimientoPaciente
-      nombrePaciente="Paciente de prueba"
-    />
-  );
+  return <Agenda />;
 }
 
 export default App;

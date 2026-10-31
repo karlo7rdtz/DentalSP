@@ -1,0 +1,484 @@
+/* =========================
+   PANTALLA
+   ========================= */
+
+.pantalla-agenda {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 35px 20px 60px;
+
+  background-color: #edf6f9;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+/* =========================
+   CONTENEDOR
+   ========================= */
+
+.contenedor-agenda {
+  width: 1000px;
+  max-width: 95%;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.15);
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.encabezado-agenda {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+
+.encabezado-agenda h1 {
+  margin: 0;
+
+  color: #006d77;
+
+  font-size: 38px;
+
+  letter-spacing: 3px;
+}
+
+
+.encabezado-agenda p {
+  margin-top: 8px;
+
+  color: #667;
+}
+
+
+/* =========================
+   BUSQUEDA
+   ========================= */
+
+.seccion-busqueda-agenda {
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 22px;
+}
+
+
+.seccion-busqueda-agenda h2 {
+  margin-top: 0;
+
+  color: #006d77;
+}
+
+
+.campos-busqueda {
+  display: grid;
+
+  grid-template-columns:
+    2fr 1fr 1fr auto;
+
+  gap: 15px;
+
+  align-items: end;
+}
+
+
+.campos-busqueda label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #334;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.campos-busqueda input {
+  padding: 12px;
+
+  border:
+    1px solid #b8c8cc;
+
+  border-radius: 12px;
+
+  background-color: white;
+
+  font-family: inherit;
+}
+
+
+.boton-buscar-agenda {
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background-color: #006d77;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CALENDARIO
+   ========================= */
+
+.seccion-calendario {
+  padding: 28px;
+
+  margin-bottom: 30px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 22px;
+}
+
+
+.encabezado-calendario {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-bottom: 25px;
+}
+
+
+.encabezado-calendario h2 {
+  min-width: 220px;
+
+  margin: 0;
+
+  color: #006d77;
+
+  text-align: center;
+}
+
+
+.boton-mes {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: #006d77;
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* DÍAS */
+
+.dias-semana {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  margin-bottom: 8px;
+
+  text-align: center;
+
+  color: #006d77;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.calendario-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 8px;
+}
+
+
+.dia-calendario {
+  aspect-ratio: 1;
+
+  border:
+    1px solid #d5e1e3;
+
+  border-radius: 12px;
+
+  background-color: white;
+
+  color: #334;
+
+  font-family: inherit;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.dia-calendario:hover {
+  border-color: #006d77;
+
+  background-color: #edf6f9;
+}
+
+
+.dia-seleccionado {
+  background-color: #006d77;
+
+  border-color: #006d77;
+
+  color: white;
+}
+
+
+.dia-vacio {
+  aspect-ratio: 1;
+}
+
+
+.fecha-seleccionada {
+  margin-top: 20px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background-color: #edf6f9;
+
+  text-align: center;
+
+  color: #334;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+.seccion-citas {
+  padding: 28px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 22px;
+}
+
+
+.seccion-citas h2 {
+  margin-top: 0;
+
+  color: #006d77;
+}
+
+
+.contenedor-tabla {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.tabla-citas {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background-color: white;
+}
+
+
+.tabla-citas th,
+.tabla-citas td {
+  padding: 13px;
+
+  border-bottom:
+    1px solid #dfe9eb;
+
+  text-align: left;
+}
+
+
+.tabla-citas th {
+  background-color: #006d77;
+
+  color: white;
+}
+
+
+.sin-citas {
+  padding: 25px !important;
+
+  color: #777;
+
+  text-align: center !important;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.acciones-agenda {
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.boton-generar-cita,
+.boton-modificar-cita {
+  min-width: 180px;
+
+  padding: 13px 22px;
+
+  border-radius: 30px;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.boton-generar-cita {
+  border: none;
+
+  background-color: #006d77;
+
+  color: white;
+}
+
+
+.boton-modificar-cita {
+  border:
+    2px solid #006d77;
+
+  background-color: white;
+
+  color: #006d77;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .pantalla-agenda {
+    padding:
+      20px
+      10px
+      40px;
+  }
+
+
+  .contenedor-agenda {
+    max-width: 100%;
+
+    padding:
+      25px
+      15px;
+
+    border-radius: 20px;
+  }
+
+
+  .campos-busqueda {
+    grid-template-columns: 1fr;
+  }
+
+
+  .seccion-calendario {
+    padding:
+      20px
+      12px;
+  }
+
+
+  .encabezado-calendario {
+    gap: 10px;
+  }
+
+
+  .encabezado-calendario h2 {
+    min-width: 160px;
+
+    font-size: 19px;
+  }
+
+
+  .calendario-grid {
+    gap: 4px;
+  }
+
+
+  .dia-calendario {
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .dias-semana {
+    font-size: 11px;
+  }
+
+
+  .acciones-agenda {
+    flex-direction: column;
+  }
+
+
+  .boton-generar-cita,
+  .boton-modificar-cita {
+    width: 100%;
+  }
+
+}

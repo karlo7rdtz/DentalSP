@@ -6,9 +6,10 @@ import "../styles/registroPaciente.css";
 
 function FormularioPaciente({
   alFirmarConsentimiento,
+  datosIniciales,
 }) {
-
-  const [datos, setDatos] = useState({
+  const [datos, setDatos] = useState(
+  datosIniciales || {
 
     // =========================
     // PASO 1

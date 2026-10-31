@@ -501,6 +501,106 @@
   transform: translateY(-2px);
 }
 
+/* =========================
+   REGISTRO EXITOSO
+   ========================= */
+
+.registro-exitoso {
+  width: 100%;
+
+  min-height: 450px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  text-align: center;
+}
+
+
+.icono-exito {
+  width: 85px;
+  height: 85px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: #006d77;
+
+  color: white;
+
+  font-size: 45px;
+  font-weight: 700;
+}
+
+
+.registro-exitoso h1 {
+  margin: 0;
+
+  color: #006d77;
+
+  font-size: 32px;
+}
+
+
+.registro-exitoso p {
+  max-width: 550px;
+
+  margin: 0;
+
+  color: #334;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+.aviso-prototipo {
+  padding: 15px 20px;
+
+  background-color: #edf6f9;
+
+  border-radius: 15px;
+}
+
+
+.boton-nuevo-paciente {
+  margin-top: 10px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background-color: #006d77;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.boton-nuevo-paciente:hover {
+  background-color: #e29578;
+
+  transform: translateY(-2px);
+}
 
 /* =========================
    CELULAR

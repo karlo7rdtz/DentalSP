@@ -5,7 +5,9 @@ import FirmaTactil from "./firmatactil";
 import "../styles/consentimientoPaciente.css";
 
 function ConsentimientoPaciente({
-  nombrePaciente = "Nombre del paciente",
+  datosPaciente,
+  alVolver,
+  alRegistrarPaciente,
 }) {
       const [firma, setFirma] =
     useState(null);
@@ -27,7 +29,34 @@ function ConsentimientoPaciente({
     <main className="pantalla-consentimiento">
 
       <section className="hoja-consentimiento">
+       <button
+  type="button"
+  onClick={alVolver}
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
 
+    padding: "12px 22px",
+    marginBottom: "25px",
+
+    border: "2px solid #006d77",
+    borderRadius: "30px",
+
+    backgroundColor: "#ffffff",
+    color: "#006d77",
+
+    fontFamily: "Montserrat, Arial, sans-serif",
+    fontSize: "14px",
+    fontWeight: "700",
+
+    cursor: "pointer",
+
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.08)",
+  }}
+>
+  ← Volver al formulario
+</button>
         {/* LOGO DE LA DENTISTA */}
         <div className="logo-consentimiento">
           LOGO
@@ -43,7 +72,7 @@ function ConsentimientoPaciente({
 
           <p>
             Por medio del presente, yo{" "}
-            <strong>{nombrePaciente}</strong>,
+            <strong>{datosPaciente?.nombre || "Nombre del paciente"}</strong>,
             autorizo al profesional responsable y a sus
             auxiliares para realizar los procedimientos
             odontológicos necesarios para el cuidado de
@@ -114,28 +143,27 @@ function ConsentimientoPaciente({
 
 
             <button
-            type="button"
-            className="boton-registrar-paciente"
+                type="button"
+                className="boton-registrar-paciente"
+                onClick={() => {
 
-            onClick={() => {
+                    if (!firma) {
+                    alert(
+                        "El paciente debe firmar el consentimiento antes de continuar."
+                    );
 
-                if (!firma) {
-                alert(
-                    "El paciente debe firmar el consentimiento antes de continuar."
-                );
+                    return;
+                    }
 
-                return;
-                }
+                    alRegistrarPaciente({
+                    ...datosPaciente,
+                    firma: firma,
+                    });
 
-                console.log(
-                "Firma del paciente:",
-                firma
-                );
-
-            }}
-            >
-            Registrar paciente
-            </button>
+                }}
+                >
+                Registrar paciente
+                </button>
 
           </div>
 
