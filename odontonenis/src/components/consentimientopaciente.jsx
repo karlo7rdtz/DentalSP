@@ -1,8 +1,28 @@
+import { useState } from "react";
+
+import FirmaTactil from "./firmatactil";
+
 import "../styles/consentimientoPaciente.css";
 
 function ConsentimientoPaciente({
   nombrePaciente = "Nombre del paciente",
 }) {
+      const [firma, setFirma] =
+    useState(null);
+
+  const [limpiarFirma, setLimpiarFirma] =
+    useState(false);
+      const borrarFirma = () => {
+
+    setFirma(null);
+
+    setLimpiarFirma(true);
+
+    setTimeout(() => {
+      setLimpiarFirma(false);
+    }, 0);
+
+  };
   return (
     <main className="pantalla-consentimiento">
 
@@ -75,7 +95,10 @@ function ConsentimientoPaciente({
 
 
           <div className="area-firma">
-            Aquí colocaremos la firma táctil
+            <FirmaTactil
+              onFirmaChange={setFirma}
+              limpiarFirma={limpiarFirma}
+            />
           </div>
 
 
@@ -84,16 +107,34 @@ function ConsentimientoPaciente({
             <button
               type="button"
               className="boton-borrar-firma"
+              onClick={borrarFirma}
             >
               Borrar firma
             </button>
 
 
             <button
-              type="button"
-              className="boton-registrar-paciente"
+            type="button"
+            className="boton-registrar-paciente"
+
+            onClick={() => {
+
+                if (!firma) {
+                alert(
+                    "El paciente debe firmar el consentimiento antes de continuar."
+                );
+
+                return;
+                }
+
+                console.log(
+                "Firma del paciente:",
+                firma
+                );
+
+            }}
             >
-              Registrar paciente
+            Registrar paciente
             </button>
 
           </div>

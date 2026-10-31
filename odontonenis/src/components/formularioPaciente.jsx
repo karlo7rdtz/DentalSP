@@ -4,7 +4,9 @@ import PreguntaSiNo from "./preguntaSiNo";
 import "../styles/registroPaciente.css";
 
 
-function FormularioPaciente() {
+function FormularioPaciente({
+  alFirmarConsentimiento,
+}) {
 
   const [datos, setDatos] = useState({
 
@@ -1300,62 +1302,55 @@ function FormularioPaciente() {
         )}
 
 
-        {/* =========================
-            NAVEGACIÓN
-            ========================= */}
+            {/* =========================
+                NAVEGACIÓN
+                ========================= */}
 
-        <div className="navegacion-formulario">
+            <div className="navegacion-formulario">
 
-          {pasoActual > 1 && (
+              {pasoActual > 1 && (
 
-            <button
-              type="button"
-              className="boton-anterior"
-              onClick={pasoAnterior}
-            >
-              ← Anterior
-            </button>
+                <button
+                  type="button"
+                  className="boton-anterior"
+                  onClick={pasoAnterior}
+                >
+                  ← Anterior
+                </button>
 
-          )}
-
-
-          {pasoActual < totalPasos ? (
-
-            <button
-              type="button"
-              className="boton-siguiente"
-              onClick={siguientePaso}
-            >
-              Siguiente →
-            </button>
-
-          ) : (
-
-            <button
-              type="button"
-              className="boton-consentimiento"
-              onClick={() =>
-                console.log(
-                  "Ir al consentimiento",
-                  datos
-                )
-              }
-            >
-              Firmar consentimiento
-            </button>
-
-          )}
-
-        </div>
+              )}
 
 
-      </section>
+              {pasoActual < totalPasos ? (
 
-    </main>
+                <button
+                  type="button"
+                  className="boton-siguiente"
+                  onClick={siguientePaso}
+                >
+                  Siguiente →
+                </button>
 
-  );
+              ) : (
 
-}
+                <button
+                  type="button"
+                  className="boton-consentimiento"
+                  onClick={() =>
+                    alFirmarConsentimiento(datos)
+                  }
+                >
+                  Firmar consentimiento
+                </button>
 
+              )}
+
+            </div>
+
+        </section>
+
+      </main>            
+    );
+ }
 
 export default FormularioPaciente;
