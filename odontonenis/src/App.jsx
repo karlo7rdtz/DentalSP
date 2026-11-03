@@ -1,24 +1,32 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
 
-import miFondo from './assets/fondo.jpeg'; 
+import { useState } from "react";
+import Menu from "./menu";
+import "./App.css";
+
+import miFondo from "./assets/fondo.jpeg";
 
 export default function App() {
+  const [pantalla, setPantalla] = useState("inicio");
+
   const handleLogin = () => {
-    alert('¡Iniciar sesión!');
+    setPantalla("menu");
   };
+
+  if (pantalla === "menu") {
+    return <Menu nombreUsuario="usuario1" />;
+  }
 
   return (
     <div style={styles.container}>
-      
       <div style={styles.leftPanel}></div>
 
       <div style={styles.centerPanel}>
         <h1 style={styles.title}>BIENVENIDA</h1>
-        <button style={styles.button} onClick={handleLogin}>
+
+        <button
+          style={styles.button}
+          onClick={handleLogin}
+        >
           Iniciar sesión
         </button>
       </div>
@@ -30,53 +38,58 @@ export default function App() {
 
 const styles = {
   container: {
-    display: 'flex',
-    width: '100vw',
-    height: '100vh',
+    display: "flex",
+    width: "100vw",
+    height: "100vh",
     margin: 0,
     padding: 0,
-    overflow: 'hidden',
-    boxSizing: 'border-box',
-    fontFamily: 'sans-serif',
+    overflow: "hidden",
+    boxSizing: "border-box",
+    fontFamily: "sans-serif",
   },
+
   leftPanel: {
-    width: '26%', 
+    width: "26%",
     backgroundImage: `url(${miFondo})`,
-    backgroundRepeat: 'repeat',
-    backgroundSize: '250px auto',
-    backgroundColor: '#ffffff',
+    backgroundRepeat: "repeat",
+    backgroundSize: "250px auto",
+    backgroundColor: "#ffffff",
   },
+
   centerPanel: {
-    width: '40%', 
-    backgroundColor: '#83C5BE',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '30px',
+    width: "40%",
+    backgroundColor: "#83C5BE",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "30px",
   },
+
   rightPanel: {
-    flex: 1, 
+    flex: 1,
     backgroundImage: `url(${miFondo})`,
-    backgroundRepeat: 'repeat',
-    backgroundSize: '250px auto',
-    backgroundColor: '#ffffff',
+    backgroundRepeat: "repeat",
+    backgroundSize: "250px auto",
+    backgroundColor: "#ffffff",
   },
-title: {
-    color: '#006D77',
-    fontSize: '1.8rem',
-    fontWeight: 'bold',
-    letterSpacing: '1.5px',
+
+  title: {
+    color: "#006D77",
+    fontSize: "1.8rem",
+    fontWeight: "bold",
+    letterSpacing: "1.5px",
     margin: 0,
   },
+
   button: {
-    backgroundColor: '#006D77',
-    color: '#EDF6F9',
-    border: 'none',
-    borderRadius: '20px',
-    padding: '8px 25px',
-    fontSize: '0.85rem',
-    fontWeight: 'bold',
-    cursor: 'pointer',
+    backgroundColor: "#006D77",
+    color: "#EDF6F9",
+    border: "none",
+    borderRadius: "20px",
+    padding: "8px 25px",
+    fontSize: "0.85rem",
+    fontWeight: "bold",
+    cursor: "pointer",
   },
 };
