@@ -1,19 +1,63 @@
 
 import { useState } from "react";
 import Menu from "./menu";
+import SeguimientoPaciente from "./seguimientopaciente";
+import SeguimientoTratamiento from "./seguimientotratamiento";
+import SeguimientoDiente from "./seguimientodiente";
 import "./App.css";
 
 import miFondo from "./assets/fondo.jpeg";
 
 export default function App() {
   const [pantalla, setPantalla] = useState("inicio");
+  const [pacienteSeleccionado, setPacienteSeleccionado] = useState(null);
+  const [dienteSeleccionado, setDienteSeleccionado] = useState(null);
 
   const handleLogin = () => {
     setPantalla("menu");
   };
 
   if (pantalla === "menu") {
-    return <Menu nombreUsuario="usuario1" />;
+    return (
+      <Menu
+        nombreUsuario="usuario1"
+        abrirSeguimientoPaciente={() =>
+          setPantalla("seguimientopaciente")
+        }
+      />
+    );
+  }
+
+  if (pantalla === "seguimientopaciente") {
+    return (
+      <SeguimientoPaciente
+        abrirSeguimiento={(paciente) => {
+          setPacienteSeleccionado(paciente);
+          setPantalla("seguimientotratamiento");
+        }}
+      />
+    );
+  }
+
+  if (pantalla === "seguimientotratamiento") {
+    return (
+      <SeguimientoTratamiento
+        paciente={pacienteSeleccionado}
+        abrirSeguimientoDiente={(numeroDiente) => {
+          setDienteSeleccionado(numeroDiente);
+          setPantalla("seguimientodiente");
+        }}
+      />
+    );
+  }
+
+  if (pantalla === "seguimientodiente") {
+    return (
+      <SeguimientoDiente
+        numeroDiente={dienteSeleccionado}
+        volverMenu={() => setPantalla("menu")}
+      />
+    );
   }
 
   return (

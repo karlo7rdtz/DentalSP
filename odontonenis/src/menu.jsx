@@ -5,7 +5,7 @@ import registrarIcono from "./assets/registraricono.png";
 import agendaIcono from "./assets/agendaicono.png";
 import seguimientoIcono from "./assets/seguimientoicono.png";
 
-function Menu({ nombreUsuario = "NOMBRE USUARIO" }) {
+function Menu({  nombreUsuario = "NOMBRE USUARIO",  abrirSeguimientoPaciente}) {
 
   const registrarPaciente = () => {
     console.log("Registrar paciente");
@@ -15,9 +15,9 @@ function Menu({ nombreUsuario = "NOMBRE USUARIO" }) {
     console.log("Ver agenda");
   };
 
-  const seguimientoPaciente = () => {
-    console.log("Seguimiento del paciente");
-  };
+const seguimientoPaciente = () => {
+  abrirSeguimientoPaciente();
+};
 
   return (
     <div className="menu-principal">
