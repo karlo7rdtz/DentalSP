@@ -21,10 +21,10 @@
    ========================= */
 
 .contenedor-agenda {
-  width: 1000px;
-  max-width: 95%;
+  width: 1200px;
+  max-width: 96%;
 
-  padding: 40px;
+  padding: 35px;
 
   background-color: white;
 
@@ -75,15 +75,25 @@
    ========================= */
 
 .seccion-busqueda-agenda {
-  padding: 25px;
-
-  margin-bottom: 30px;
+  padding: 22px;
 
   background-color: #f8fbfc;
 
-  border-radius: 22px;
+  border-radius: 20px;
 }
 
+.instruccion-busqueda {
+  margin:
+    0 0 18px;
+
+  color: #334;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  text-align: center;
+}
 
 .seccion-busqueda-agenda h2 {
   margin-top: 0;
@@ -96,13 +106,20 @@
   display: grid;
 
   grid-template-columns:
-    2fr 1fr 1fr auto;
+    1.5fr 0.8fr 1fr;
 
-  gap: 15px;
-
-  align-items: end;
+  gap: 12px;
 }
 
+.acciones-busqueda {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
 
 .campos-busqueda label {
   display: flex;
@@ -154,13 +171,15 @@
    ========================= */
 
 .seccion-calendario {
-  padding: 28px;
+  width: 100%;
 
-  margin-bottom: 30px;
+  padding: 25px;
 
-  background-color: #f8fbfc;
+  background-color: #fff6f3;
 
-  border-radius: 22px;
+  border: 3px solid #334;
+
+  border-radius: 18px;
 }
 
 
@@ -230,25 +249,26 @@
   grid-template-columns:
     repeat(7, 1fr);
 
-  gap: 8px;
+  gap: 6px;
 }
 
 
 .dia-calendario {
   aspect-ratio: 1;
 
-  border:
-    1px solid #d5e1e3;
+  min-width: 0;
 
-  border-radius: 12px;
+  border: none;
 
-  background-color: white;
+  border-radius: 4px;
 
-  color: #334;
+  background-color: #f8e9e6;
+
+  color: #222;
 
   font-family: inherit;
 
-  font-weight: 600;
+  font-weight: 700;
 
   cursor: pointer;
 
@@ -295,22 +315,51 @@
 /* =========================
    TABLA
    ========================= */
+.tabla-citas thead th {
+  position: sticky;
 
-.seccion-citas {
-  padding: 28px;
+  top: 0;
+
+  z-index: 2;
+
+  background-color: #006d77;
+
+  color: white;
+}
+/* =========================
+   RESULTADOS
+   ========================= */
+
+.seccion-resultados-agenda {
+  padding: 20px;
 
   background-color: #f8fbfc;
 
-  border-radius: 22px;
+  border-radius: 20px;
 }
 
 
-.seccion-citas h2 {
-  margin-top: 0;
+.seccion-resultados-agenda h2 {
+  margin:
+    0 0 15px;
 
   color: #006d77;
+
+  font-size: 18px;
 }
 
+
+.contenedor-tabla {
+  width: 100%;
+
+  max-height: 300px;
+
+  overflow-x: auto;
+
+  overflow-y: auto;
+
+  border-radius: 12px;
+}
 
 .contenedor-tabla {
   width: 100%;
@@ -360,13 +409,15 @@
    ========================= */
 
 .acciones-agenda {
-  margin-top: 25px;
-
   display: flex;
 
   justify-content: center;
 
-  gap: 20px;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 5px;
 }
 
 
@@ -404,6 +455,236 @@
   color: #006d77;
 }
 
+.dia-calendario {
+  position: relative;
+}
+
+
+.dia-con-cita {
+  font-weight: 800;
+}
+
+
+.punto-cita {
+  position: absolute;
+
+  bottom: 3px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #e29578;
+
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+
+.mensaje-agenda {
+  margin: 0 0 25px;
+
+  padding: 12px 18px;
+
+  border-radius: 15px;
+
+  background-color: #dff5ef;
+
+  color: #006d77;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.boton-limpiar-busqueda {
+  padding: 12px 20px;
+
+  border: 2px solid #006d77;
+
+  border-radius: 25px;
+
+  background-color: white;
+
+  color: #006d77;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================
+   DISTRIBUCIÓN PRINCIPAL
+   ========================= */
+
+.distribucion-agenda {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(360px, 0.75fr);
+
+  gap: 35px;
+
+  align-items: start;
+}
+
+
+.columna-agenda-izquierda {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+.columna-calendario {
+  min-width: 0;
+
+  position: sticky;
+
+  top: 25px;
+}
+
+.fila-cita {
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.fila-cita:hover {
+  background-color: #edf6f9;
+}
+
+
+.fila-cita-seleccionada {
+  background-color: #d7eff1;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+/* =========================
+   DISPONIBILIDAD
+   ========================= */
+
+.seccion-disponibilidad {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 20px;
+}
+
+
+.seccion-disponibilidad h3 {
+  margin:
+    0 0 5px;
+
+  color: #006d77;
+
+  text-align: center;
+}
+
+
+.fecha-disponibilidad {
+  margin:
+    0 0 15px;
+
+  color: #667;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+
+.lista-disponibilidad {
+  max-height: 270px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+}
+
+
+.horario {
+  width: 100%;
+
+  padding: 10px 14px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 12px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.hora-disponibilidad {
+  font-weight: 800;
+}
+
+
+.horario-libre {
+  border:
+    1px solid #83c5be;
+
+  background-color: white;
+
+  color: #006d77;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.horario-libre:hover {
+  background-color: #edf6f9;
+
+  transform: translateX(3px);
+}
+
+
+.horario-ocupado {
+  border:
+    1px solid #e0c4bd;
+
+  background-color: #f5ebe8;
+
+  color: #8a6660;
+
+  cursor: not-allowed;
+
+  opacity: 0.85;
+}
 
 /* =========================
    CELULAR
@@ -411,6 +692,51 @@
 
 @media (max-width: 700px) {
 
+
+    .distribucion-agenda {
+  grid-template-columns: 1fr;
+}
+
+
+.columna-calendario {
+  position: static;
+}
+
+
+.campos-busqueda {
+  grid-template-columns: 1fr;
+}
+
+
+.acciones-busqueda {
+  flex-direction: column;
+}
+
+
+.boton-buscar-agenda,
+.boton-limpiar-busqueda {
+  width: 100%;
+}
+
+
+.contenedor-tabla {
+  max-height: 280px;
+}
+
+    .fila-cita {
+  grid-template-columns: 1fr;
+}
+
+
+.botones-formulario-cita {
+  flex-direction: column;
+}
+
+
+.boton-cancelar-cita,
+.boton-confirmar-cita {
+  width: 100%;
+}
   .pantalla-agenda {
     padding:
       20px

@@ -31,10 +31,20 @@
 //export default App;
 
 //****CUARTA INTERFAZ AGENDA****//
-import Agenda from "./pages/agenda";
+// import Agenda from "./pages/agenda";
+
+// function App() {
+  // return <Agenda />;
+//}
+
+// export default App;
+
+//****QUINTA INTERFAZ GENERAR CITA****//
+
+import HistorialClinico from "./pages/historialClinico";
 
 function App() {
-  return <Agenda />;
+  return <HistorialClinico />;
 }
 
 export default App;
