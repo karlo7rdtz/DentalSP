@@ -1,0 +1,262 @@
+.pantalla-preguntas-firma {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 40px 20px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: #edf6f9;
+}
+
+
+.contenedor-preguntas-firma {
+  width: 850px;
+  max-width: 95%;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.15);
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+
+.boton-volver-preguntas {
+  padding: 10px 18px;
+
+  border:
+    2px solid #006d77;
+
+  border-radius: 25px;
+
+  background-color: white;
+
+  color: #006d77;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.encabezado-preguntas-firma {
+  margin:
+    25px 0
+    35px;
+
+  text-align: center;
+}
+
+
+.encabezado-preguntas-firma h1 {
+  margin: 0;
+
+  color: #006d77;
+
+  font-size: 32px;
+}
+
+
+.encabezado-preguntas-firma p {
+  margin-top: 8px;
+
+  color: #667;
+
+  font-weight: 600;
+}
+
+
+.bloque-preguntas {
+  margin-bottom: 25px;
+
+  padding: 25px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 20px;
+}
+
+
+.bloque-preguntas h2 {
+  margin:
+    0 0 20px;
+
+  color: #006d77;
+
+  font-size: 20px;
+}
+
+
+.grid-respuestas {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+
+.grid-respuestas div,
+.lista-respuestas div {
+  padding: 14px;
+
+  background-color: white;
+
+  border-radius: 12px;
+}
+
+
+.grid-respuestas div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.grid-respuestas span,
+.lista-respuestas span,
+.estado-salud span {
+  color: #667;
+
+  font-size: 13px;
+}
+
+
+.grid-respuestas strong,
+.lista-respuestas strong,
+.estado-salud strong {
+  color: #334;
+}
+
+
+.lista-respuestas {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.lista-respuestas div {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.respuesta-larga {
+  margin: 0;
+
+  padding: 15px;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  color: #334;
+
+  line-height: 1.6;
+}
+
+
+.estado-salud {
+  margin-top: 15px;
+
+  padding: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  background-color: white;
+
+  border-radius: 12px;
+}
+
+
+.firma-guardada {
+  width: 100%;
+  min-height: 180px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border:
+    2px dashed #83c5be;
+
+  border-radius: 15px;
+
+  background-color: white;
+}
+
+
+.firma-guardada img {
+  max-width: 100%;
+  max-height: 170px;
+}
+
+
+.firma-guardada p {
+  padding: 20px;
+
+  color: #778;
+
+  text-align: center;
+}
+
+
+@media (max-width: 700px) {
+
+  .pantalla-preguntas-firma {
+    padding:
+      20px
+      10px
+      40px;
+  }
+
+
+  .contenedor-preguntas-firma {
+    max-width: 100%;
+
+    padding:
+      25px
+      15px;
+  }
+
+
+  .grid-respuestas {
+    grid-template-columns: 1fr;
+  }
+
+
+  .lista-respuestas div {
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+}

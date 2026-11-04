@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "../styles/historialClinico.css";
 import RegistrarAbono from "./registrarAbono";
-
+import PreguntasFirma from "./preguntasFirma";
 
 function HistorialClinico() {
 
@@ -16,6 +16,54 @@ function HistorialClinico() {
   const [nombrePaciente] =
     useState("Paciente de prueba");
 
+    const [datosClinicosPaciente] =
+  useState({
+
+    nombrePaciente: "Paciente de prueba",
+
+    edad: "24",
+
+    fechaNacimiento: "2002-05-15",
+
+    celular: "4430000000",
+
+    motivoConsulta:
+      "Dolor y sensibilidad dental.",
+
+    mastigaAmbosLados: "si",
+
+    cansancioMasticar: "no",
+
+    rechinaDientes: "no",
+
+    sensibilidad: "si",
+
+    sensibilidadFrio: true,
+
+    sensibilidadCalor: false,
+
+    sensibilidadDulce: false,
+
+    inflamacionEncias: "no",
+
+    sangradoEncias: "no",
+
+    fuma: "no",
+
+    enfermedad: "no",
+
+    tratamientoMedico: "no",
+
+    alergia: "no",
+
+    enfermedadSanguinea: "no",
+
+    estadoSaludActual:
+      "Bueno",
+
+    firma: null,
+
+  });
 
   // ==========================================
   // HISTORIAL DE PRUEBA
@@ -200,6 +248,24 @@ if (
 
       alGuardar={
         registrarNuevoAbono
+      }
+
+    />
+  );
+
+}
+
+if (pantalla === "preguntas") {
+
+  return (
+    <PreguntasFirma
+
+      datosPaciente={
+        datosClinicosPaciente
+      }
+
+      alVolver={() =>
+        setPantalla("historial")
       }
 
     />
@@ -551,9 +617,7 @@ if (
             className="boton-preguntas-firma"
 
             onClick={() =>
-              console.log(
-                "Abrir preguntas y firma"
-              )
+              setPantalla("preguntas")
             }
           >
             Preguntas y firma
