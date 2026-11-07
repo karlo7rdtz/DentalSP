@@ -5,34 +5,58 @@ function TarjetaPerfil({
   alSeleccionar,
   alEditar,
 }) {
+
   return (
+
     <article className={`tarjeta-perfil ${paleta}`}>
 
-     <div className="avatar-temporal">
-      <img
-        src={avatar}
-        alt={`Avatar de ${nombre}`}
-    />
+
+      {/* AVATAR */}
+
+      <div className="avatar-temporal">
+
+        <img
+          src={avatar}
+          alt={`Avatar de ${nombre}`}
+        />
+
       </div>
 
-      <h2>{nombre}</h2>
+
+      {/* NOMBRE */}
+
+      <h2>
+        {nombre}
+      </h2>
+
+
+      {/* BOTÓN INGRESAR */}
 
       <button
+        type="button"
         className="boton-ingresar"
         onClick={alSeleccionar}
       >
         Ingresar
       </button>
 
+
+      {/* BOTÓN EDITAR */}
+
       <button
+        type="button"
         className="boton-editar"
         onClick={alEditar}
       >
         Editar perfil
       </button>
 
+
     </article>
+
   );
+
 }
+
 
 export default TarjetaPerfil;
