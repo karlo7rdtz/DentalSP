@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f2f5;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.menu-principal {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.encabezado {
+  width: 100%;
+  height: 186px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 27px;
+}
+
+.circulo-logo {
+  width: 142px;
+  height: 142px;
+  background-color: #586653;
+  border-radius: 50%;
+}
+
+.barra-bienvenida {
+  width: 100%;
+  min-height: 54px;
+  background-color: #586653;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px;
+}
+
+.barra-bienvenida h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.contenedor-botones {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  padding: 50px 35px;
+}
+
+.boton-menu {
+  width: 235px;
+  height: 80px;
+  background-color: #586653;
+  border: none;
+  border-radius: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.icono-boton {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.boton-menu span {
+  flex: 1;
+  line-height: 1.3;
+}
+
+.boton-menu:hover {
+  background-color: #455340;
+  transform: scale(1.04);
+}
+
+.boton-menu:active {
+  transform: scale(0.98);
+}
+
+.boton-menu:focus-visible {
+  outline: 3px solid #94aa89;
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .contenedor-botones {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .barra-bienvenida h1 {
+    font-size: 25px;
+  }
+
+  .boton-menu {
+    width: 260px;
+  }
+}
