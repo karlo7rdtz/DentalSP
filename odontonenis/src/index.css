@@ -1,5 +1,6 @@
+// <<<<<<< main
 
-* {
+//* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,4 +21,33 @@ body {
 
 #root {
   width: 100%;
+//}
+=======
+//* {
+  box-sizing: border-box;
 }
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+
+  font-family: "Trebuchet MS", Arial, sans-serif; 
+
+  background-color: #edf6f9;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+//}
+// >>>>>>> feature/perfiles

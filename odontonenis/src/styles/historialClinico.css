@@ -1,0 +1,361 @@
+/* =========================
+   PANTALLA
+   ========================= */
+
+.pantalla-historial {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 35px 20px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: #edf6f9;
+}
+
+
+/* =========================
+   CONTENEDOR
+   ========================= */
+
+.contenedor-historial {
+  width: 1150px;
+  max-width: 96%;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.15);
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.encabezado-historial {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+
+.encabezado-historial h1 {
+  margin: 0;
+
+  color: #006d77;
+
+  font-size: 34px;
+
+  letter-spacing: 2px;
+}
+
+
+.encabezado-historial p {
+  margin:
+    8px 0 0;
+
+  color: #667;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+.seccion-tabla-historial {
+  width: 100%;
+}
+
+
+.contenedor-tabla-historial {
+  width: 100%;
+
+  max-height: 360px;
+
+  overflow: auto;
+
+  border-radius: 15px;
+
+  border:
+    1px solid #dfe9eb;
+}
+
+
+.tabla-historial {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background-color: white;
+}
+
+
+.tabla-historial th,
+.tabla-historial td {
+  padding: 14px;
+
+  border-bottom:
+    1px solid #dfe9eb;
+
+  text-align: left;
+
+  vertical-align: middle;
+}
+
+
+.tabla-historial th {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 2;
+
+  background-color: #006d77;
+
+  color: white;
+}
+
+
+.fila-historial {
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.fila-historial:hover {
+  background-color: #edf6f9;
+}
+
+
+.fila-historial-seleccionada {
+  background-color: #d7eff1;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+.sin-historial {
+  padding: 30px !important;
+
+  text-align: center !important;
+
+  color: #777;
+}
+
+
+/* =========================
+   SALDOS
+   ========================= */
+
+.saldo-pendiente {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 15px;
+
+  background-color: #fff0e8;
+
+  color: #a24f2c;
+
+  font-weight: 700;
+}
+
+
+.saldo-pagado {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 15px;
+
+  background-color: #dff5ef;
+
+  color: #006d77;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   RESUMEN
+   ========================= */
+
+.resumen-tratamiento {
+  margin-top: 25px;
+
+  padding: 25px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 20px;
+}
+
+
+.resumen-tratamiento h2 {
+  margin:
+    0 0 20px;
+
+  color: #006d77;
+
+  font-size: 20px;
+}
+
+
+.datos-resumen {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 15px;
+}
+
+
+.datos-resumen div {
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  background-color: white;
+
+  border-radius: 15px;
+
+  text-align: center;
+}
+
+
+.datos-resumen span {
+  color: #667;
+
+  font-size: 13px;
+}
+
+
+.datos-resumen strong {
+  color: #334;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.acciones-historial {
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.boton-preguntas-firma,
+.boton-registrar-abono {
+  min-width: 190px;
+
+  padding: 13px 24px;
+
+  border-radius: 30px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.boton-preguntas-firma {
+  border:
+    2px solid #006d77;
+
+  background-color: white;
+
+  color: #006d77;
+}
+
+
+.boton-registrar-abono {
+  border: none;
+
+  background-color: #006d77;
+
+  color: white;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .pantalla-historial {
+    padding:
+      20px
+      10px
+      40px;
+  }
+
+
+  .contenedor-historial {
+    max-width: 100%;
+
+    padding:
+      25px
+      15px;
+
+    border-radius: 20px;
+  }
+
+
+  .encabezado-historial h1 {
+    font-size: 25px;
+  }
+
+
+  .datos-resumen {
+    grid-template-columns: 1fr;
+  }
+
+
+  .acciones-historial {
+    flex-direction: column;
+  }
+
+
+  .boton-preguntas-firma,
+  .boton-registrar-abono {
+    width: 100%;
+  }
+
+}

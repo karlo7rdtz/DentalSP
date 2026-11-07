@@ -1,0 +1,434 @@
+/* =========================
+   PANTALLA
+   ========================= */
+
+.pantalla-consentimiento {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 40px 20px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: #edf6f9;
+}
+
+
+/* =========================
+   HOJA
+   ========================= */
+
+.hoja-consentimiento {
+  width: 800px;
+  max-width: 95%;
+
+  padding: 45px;
+
+  background-color: white;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.15);
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo-consentimiento {
+  width: 140px;
+  height: 100px;
+
+  margin:
+    0 auto
+    25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border:
+    2px dashed
+    #83c5be;
+
+  border-radius: 18px;
+
+  color: #006d77;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   TITULO
+   ========================= */
+
+.hoja-consentimiento h1 {
+  margin:
+    0 0 35px;
+
+  color: #006d77;
+
+  font-size:
+    clamp(
+      24px,
+      4vw,
+      34px
+    );
+
+  line-height: 1.25;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   TEXTO
+   ========================= */
+
+.texto-consentimiento {
+  padding: 30px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 22px;
+
+  color: #334;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  text-align: justify;
+}
+
+
+.texto-consentimiento p {
+  margin:
+    0 0 20px;
+}
+
+
+.texto-consentimiento p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   FIRMA
+   ========================= */
+
+.seccion-firma {
+  margin-top: 35px;
+
+  padding: 30px;
+
+  background-color: #f8fbfc;
+
+  border-radius: 22px;
+}
+
+
+.seccion-firma h2 {
+  margin:
+    0 0 10px;
+
+  color: #006d77;
+
+  text-align: center;
+}
+
+
+.instruccion-firma {
+  margin:
+    0 0 20px;
+
+  color: #566;
+
+  text-align: center;
+}
+
+
+/* =========================
+   ÁREA PARA FIRMAR
+   ========================= */
+
+.area-firma {
+  width: 100%;
+  height: 220px;
+
+  border:
+    2px dashed
+    #83c5be;
+
+  border-radius: 15px;
+
+  background-color: white;
+
+  overflow: hidden;
+}
+
+.canvas-firma {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  background-color: white;
+
+  cursor: crosshair;
+
+  touch-action: none;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.botones-firma {
+  width: 100%;
+
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.boton-borrar-firma,
+.boton-registrar-paciente {
+  min-width: 170px;
+
+  padding:
+    13px
+    24px;
+
+  border-radius: 30px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.boton-borrar-firma {
+  background-color: white;
+
+  border:
+    2px solid
+    #006d77;
+
+  color: #006d77;
+}
+
+
+.boton-registrar-paciente {
+  border: none;
+
+  background-color: #006d77;
+
+  color: white;
+}
+
+
+.boton-borrar-firma:hover {
+  background-color: #edf6f9;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.boton-registrar-paciente:hover {
+  background-color: #e29578;
+
+  transform:
+    translateY(-2px);
+}
+
+.boton-volver-formulario {
+  margin-bottom: 25px;
+
+  padding: 10px 18px;
+
+  border: 2px solid #006d77;
+
+  border-radius: 25px;
+
+  background-color: white;
+
+  color: #006d77;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.boton-volver-formulario:hover {
+  background-color: #edf6f9;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   BOTÓN VOLVER
+   ========================= */
+
+.boton-volver-formulario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 20px;
+
+  margin-bottom: 25px;
+
+  border: 2px solid #006d77;
+  border-radius: 30px;
+
+  background-color: white;
+
+  color: #006d77;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.boton-volver-formulario:hover {
+  background-color: #006d77;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+.boton-volver-formulario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+  margin-bottom: 25px;
+
+  border: 2px solid #006d77 !important;
+  border-radius: 30px !important;
+
+  background-color: #ffffff !important;
+
+  color: #006d77 !important;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.boton-volver-formulario:hover {
+  background-color: #006d77 !important;
+
+  color: rgb(158, 50, 50) !important;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .pantalla-consentimiento {
+    padding:
+      20px
+      10px
+      40px;
+  }
+
+
+  .hoja-consentimiento {
+    max-width: 100%;
+
+    padding:
+      25px
+      18px;
+
+    border-radius: 20px;
+  }
+
+
+  .texto-consentimiento {
+    padding: 20px;
+
+    text-align: left;
+  }
+
+
+  .seccion-firma {
+    padding:
+      25px
+      15px;
+  }
+
+
+  .area-firma {
+    height: 180px;
+  }
+
+
+  .botones-firma {
+    flex-direction: column;
+  }
+
+
+  .boton-borrar-firma,
+  .boton-registrar-paciente {
+    width: 100%;
+  }
+
+}
