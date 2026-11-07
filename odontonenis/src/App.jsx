@@ -138,7 +138,8 @@
    // cursor: "pointer",
   //},
 //};
-=======
+
+// =======
 //****PRIMERA INTERFAZ PERFILES****//
 
 //import SeleccionarPerfil from "./pages/seleccionarPerfil";
@@ -181,11 +182,11 @@
 
 //****QUINTA INTERFAZ GENERAR CITA****//
 
-//import HistorialClinico from "./pages/historialClinico";
+import HistorialClinico from "./pages/historialClinico";
 
-//function App() {
-  //return <HistorialClinico />;
-//}
+function App() {
+  return <HistorialClinico />;
+}
 
-//export default App;
+export default App;
 //>>>>>>> feature/perfiles

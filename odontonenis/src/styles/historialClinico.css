@@ -278,7 +278,8 @@
 
 
 .boton-preguntas-firma,
-.boton-registrar-abono {
+.boton-registrar-abono,
+.boton-descargar-pdf {
   min-width: 190px;
 
   padding: 13px 24px;
@@ -291,8 +292,24 @@
   font-weight: 700;
 
   cursor: pointer;
+  
+  transition: 0.2s ease;
 }
 
+.boton-descargar-pdf {
+  border: none;
+
+  background-color: #e29578;
+
+  color: white;
+}
+
+
+.boton-descargar-pdf:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(0.95);
+}
 
 .boton-preguntas-firma {
   border:
@@ -354,7 +371,8 @@
 
 
   .boton-preguntas-firma,
-  .boton-registrar-abono {
+  .boton-registrar-abono,
+  .boton-descargar-pdf  {
     width: 100%;
   }
 

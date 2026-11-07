@@ -1,13 +1,18 @@
 import { useState } from "react";
-
+import { generarPdfHistorial }
+  from "../utils/generarPDF";
 import "../styles/historialClinico.css";
 import RegistrarAbono from "./registrarAbono";
 import PreguntasFirma from "./preguntasFirma";
 
 function HistorialClinico() {
-
+const perfilDentista = {
+  nombre: "Dentista de prueba",
+  logo: null,
+};
     const [pantalla, setPantalla] =
   useState("historial");
+
   // ==========================================
   // PACIENTE DE PRUEBA
   // Después vendrá del paciente seleccionado.
@@ -611,6 +616,32 @@ if (pantalla === "preguntas") {
 
         <div className="acciones-historial">
 
+<button
+  type="button"
+  className="boton-descargar-pdf"
+
+  onClick={async () => {
+
+    await generarPdfHistorial({
+
+      datosPaciente:
+        datosClinicosPaciente,
+
+      historial:
+        historial,
+
+      nombreDentista:
+        perfilDentista.nombre,
+
+      logoDentista:
+        perfilDentista.logo,
+
+    });
+
+  }}
+>
+  Descargar PDF
+</button>
 
           <button
             type="button"
